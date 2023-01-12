@@ -31,6 +31,7 @@ function Cats() {
   return (
     <div id="cats">
       <Link to="/">Main page</Link>
+      <Link to="/anime">Поиск аниме и вайфу</Link>
 
       <div>{gif && <img src={URL.createObjectURL(gif)} alt="cat-gif" />}</div>
       <button onClick={getCatGif}>Хочу гифку с котом!</button>

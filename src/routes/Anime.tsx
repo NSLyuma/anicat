@@ -34,6 +34,7 @@ function Anime() {
   return (
     <div>
       <Link to="/">Main page</Link>
+      <Link to="/cats">КотоГенератор</Link>
 
       <button onClick={findWaifu}>Найти вайфу</button>
       {waifu && <img width={'200px'} src={waifu} alt="waifu" />}
