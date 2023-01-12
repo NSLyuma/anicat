@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './App.css';
+import { Link } from 'react-router-dom';
 
-function App() {
+function Cats() {
   const [gif, setGif] = useState<Blob>();
   const [img, setImg] = useState<Blob>();
   const [fact, setFact] = useState('');
@@ -29,17 +29,19 @@ function App() {
   };
 
   return (
-    <div>
+    <div id="cats">
+      <Link to="/">Main page</Link>
+
       <div>{gif && <img src={URL.createObjectURL(gif)} alt="cat-gif" />}</div>
-      <button onClick={getCatGif}>CatGif</button>
+      <button onClick={getCatGif}>Хочу гифку с котом!</button>
 
       <div>{img && <img src={URL.createObjectURL(img)} alt="cat-img" />}</div>
-      <button onClick={getCatImg}>CatImg</button>
+      <button onClick={getCatImg}>Хочу картинку с котом!</button>
 
       <div>{fact}</div>
-      <button onClick={getCatFact}>CatFact</button>
+      <button onClick={getCatFact}>Хочу факт про кошек!</button>
     </div>
   );
 }
 
-export default App;
+export default Cats;
