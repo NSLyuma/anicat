@@ -43,14 +43,6 @@
   background-size: cover;
 }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .back-cats {
   background: url(../../public/bg-cats.jpg);
   background-size: cover;
@@ -68,7 +60,7 @@
   width: 70%;
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .file {
@@ -78,6 +70,7 @@
 }
 .file_last {
   margin-top: 10px;
+  width: 80%;
 }
 .file_item {
   width: 350px;
@@ -97,7 +90,6 @@
   border-radius: 10px;
   padding: 10px;
   font-size: 20px;
-  width: 70%;
   margin-top: 10px;
   text-align: center;
 }

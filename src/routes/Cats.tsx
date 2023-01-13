@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import CatFact from '../components/CatFact';
 import CatGif from '../components/CatGif';
 import CatImg from '../components/CatImg';
