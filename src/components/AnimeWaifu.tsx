@@ -13,9 +13,13 @@ function AnimeWaifu() {
   };
 
   return (
-    <div>
-      <button onClick={findWaifu}>Найти вайфу</button>
-      {waifu && <img width={'200px'} src={waifu} alt="waifu" />}
+    <div className="waifu">
+      <button className="anime_btn" onClick={findWaifu}>
+        Найти вайфу
+      </button>
+      <div className="waifu_item">
+        {waifu && <img className="waifu_img" src={waifu} alt="waifu" />}
+      </div>
     </div>
   );
 }

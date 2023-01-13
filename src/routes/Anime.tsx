@@ -4,10 +4,15 @@ import Nav from '../components/Nav';
 
 function Anime() {
   return (
-    <div>
-      <Nav link="cats" text="КотоГенератор" />
-      <AnimeFind />
-      <AnimeWaifu />
+    <div className="back-anime">
+      <div className="anime">
+        <Nav link="cats" text="КотоГенератор" />
+
+        <div className="anime_items">
+          <AnimeWaifu />
+          <AnimeFind />
+        </div>
+      </div>
     </div>
   );
 }

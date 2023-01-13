@@ -27,10 +27,17 @@ function Nav({ link, text }: StandardComponentProps) {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{ position: 'absolute', top: '10px', left: '10px' }}
+        sx={{
+          position: 'absolute',
+          top: '10px',
+          left: '10px',
+          color: '#000',
+          fontSize: '20px',
+        }}
       >
-        Меню
+        <img src="menu.png" alt="menu" />
       </Button>
+
       <Menu
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
@@ -45,13 +52,18 @@ function Nav({ link, text }: StandardComponentProps) {
           vertical: 'top',
           horizontal: 'left',
         }}
+        sx={{ top: '-5px', left: '-5px' }}
       >
         <MenuItem onClick={handleClose}>
-          <Link to="/">Главная</Link>
+          <Link className="nav_link" to="/">
+            Главная
+          </Link>
         </MenuItem>
 
         <MenuItem onClick={handleClose}>
-          <Link to={`/${link}`}>{text}</Link>
+          <Link className="nav_link" to={`/${link}`}>
+            {text}
+          </Link>
         </MenuItem>
       </Menu>
     </div>
