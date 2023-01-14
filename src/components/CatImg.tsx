@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 function CatImg() {
   const [img, setImg] = useState<Blob>();
+  const [isLoading, setIsLoading] = useState(true);
 
   const getCatImg = async () => {
     const url = 'https://cataas.com/cat';

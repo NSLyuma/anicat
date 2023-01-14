@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import CatLoader from './CatLoader';
 
 function CatGif() {
   const [gif, setGif] = useState<Blob>();
+  const [isLoading, setIsLoading] = useState(true);
 
   const getCatGif = async () => {
     const url = 'https://cataas.com/cat/gif';
@@ -10,12 +12,18 @@ function CatGif() {
     setGif(newGif);
   };
 
+  const handleImageLoading = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="file">
       <div className="file_item">
+        {isLoading && <CatLoader />}
         {gif && (
           <img
             className="file_img"
+            onLoad={handleImageLoading}
             src={URL.createObjectURL(gif)}
             alt="cat-gif"
           />

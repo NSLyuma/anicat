@@ -35,7 +35,7 @@ function Nav({ link, text }: StandardComponentProps) {
           fontSize: '20px',
         }}
       >
-        <img src="menu.png" alt="menu" />
+        <img src="img/menu.png" alt="menu" />
       </Button>
 
       <Menu

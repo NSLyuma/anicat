@@ -11,13 +11,19 @@ function AnimeFind() {
   const [url, setUrl] = useState('');
   const [data, setData] = useState<Data>();
   const [err, setErr] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isImgLoaded, setIsImgLoaded] = useState(false);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUrl(event?.target.value);
   };
 
   const findAnime = async () => {
+    setIsLoading(true);
+    setIsImgLoaded(false);
     setData(undefined);
+    setErr('');
+
     try {
       const response = await fetch(
         `https://api.trace.moe/search?cutBorders&url=${encodeURIComponent(
@@ -27,7 +33,6 @@ function AnimeFind() {
       const dataArr = await response.json();
 
       setData(dataArr.result[0]);
-      setErr('');
       setUrl('');
     } catch (error) {
       let errorMessage = 'Не могу ничего найти :(';
@@ -38,6 +43,11 @@ function AnimeFind() {
       setUrl('');
       setData(undefined);
     }
+  };
+
+  const handleContentLoading = () => {
+    setIsLoading(false);
+    setIsImgLoaded(true);
   };
 
   return (
@@ -60,16 +70,32 @@ function AnimeFind() {
         {err && (
           <div className="error">
             {err}
-            <img className="error_img" src="error.gif" alt="error" />
+            <img className="error_img" src="img/error.gif" alt="error" />
+          </div>
+        )}
+        {isLoading && !err && (
+          <div className="find_loading">
+            <p className="find_loading-text">Поиск...</p>
+            <img
+              className="find_loading-img"
+              src="img/anime-find.gif"
+              alt="loading"
+            />
           </div>
         )}
         {data && (
           <div>
             <div className="find_files">
-              <video controls>
-                <source src={data.video} />
-              </video>
-              <img src={data.image} alt="screenshot" />
+              {isImgLoaded && (
+                <video controls>
+                  <source src={data.video} />
+                </video>
+              )}
+              <img
+                onLoad={handleContentLoading}
+                src={data.image}
+                alt="screenshot"
+              />
             </div>
 
             <p className="find_text">
