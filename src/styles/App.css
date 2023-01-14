@@ -57,6 +57,7 @@ button:hover {
   width: 100%;
   color: #000;
   transition: color 0.3s;
+  padding: 10px 16px;
 }
 .nav_link:hover {
   color: #443850;
@@ -252,4 +253,9 @@ button:hover {
 }
 .loading_text_find {
   top: 0;
+}
+
+.cat_loader {
+  font-size: 28px;
+  font-weight: bold;
 }/*# sourceMappingURL=App.css.map */

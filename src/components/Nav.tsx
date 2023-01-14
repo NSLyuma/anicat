@@ -54,13 +54,13 @@ function Nav({ link, text }: StandardComponentProps) {
         }}
         sx={{ top: '-5px', left: '-5px' }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleClose} sx={{ padding: '0' }}>
           <Link className="nav_link" to="/">
             Главная
           </Link>
         </MenuItem>
 
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleClose} sx={{ padding: '0' }}>
           <Link className="nav_link" to={`/${link}`}>
             {text}
           </Link>

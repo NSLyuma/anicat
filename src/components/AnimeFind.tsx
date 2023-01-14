@@ -98,12 +98,16 @@ function AnimeFind() {
               />
             </div>
 
-            <p className="find_text">
-              <b>Возможно это </b> {data.filename.split('.mp4')[0]}
-            </p>
-            <p className="find_text">
-              <b>Эпизод</b> {data.episode}
-            </p>
+            {isImgLoaded && (
+              <div>
+                <p className="find_text">
+                  <b>Возможно это </b> {data.filename.split('.mp4')[0]}
+                </p>
+                <p className="find_text">
+                  <b>Эпизод</b> {data.episode}
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>

@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CatLoader from './CatLoader';
 
 function CatGif() {
   const [gif, setGif] = useState<Blob>();
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
   const getCatGif = async () => {
+    setIsLoading(true);
+    setGif(undefined);
+
     const url = 'https://cataas.com/cat/gif';
     const response = await fetch(url);
     const newGif: Blob = await response.blob();
