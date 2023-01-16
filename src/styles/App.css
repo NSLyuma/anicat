@@ -260,4 +260,9 @@ button:hover {
   font-size: 28px;
   font-weight: bold;
   position: absolute;
+}
+
+.broken-img,
+.broken-gif {
+  opacity: 0;
 }/*# sourceMappingURL=App.css.map */
