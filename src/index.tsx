@@ -7,6 +7,7 @@ import App from './routes/App';
 import ErrorPage from './error-page';
 import Cats from './routes/Cats';
 import Anime from './routes/Anime';
+import AnimeQuiz from './routes/AnimeQuiz';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   },
   { path: '/cats', element: <Cats /> },
   { path: '/anime', element: <Anime /> },
+  { path: '/game', element: <AnimeQuiz /> },
 ]);
 
 const root = ReactDOM.createRoot(
